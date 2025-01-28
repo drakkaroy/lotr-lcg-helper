@@ -1,0 +1,124 @@
+{
+    "steps": [
+        {
+            "stepNumber": 1,
+            "label": "Draw a card",
+            "description": "Each player draws a card from the deck.",
+            "category": "action",
+            "phase": "1",
+            "phaseLabel": "Planning phase"
+        },
+        {
+            "stepNumber": 2,
+            "label": "Play allies and attachments",
+            "description": "Players can play ally and attachment cards from their hand.",
+            "category": "action",
+            "phase": "1",
+            "phaseLabel": "Planning phase"
+        },
+        {
+            "stepNumber": 3,
+            "label": "Commit characters",
+            "description": "Players commit characters to the quest.",
+            "category": "action",
+            "phase": "2",
+            "phaseLabel": "Quest phase"
+        },
+        {
+            "stepNumber": 4,
+            "label": "Reveal encounter",
+            "description": "Reveal one encounter card per player.",
+            "category": "action",
+            "phase": "2",
+            "phaseLabel": "Quest phase"
+        },
+        {
+            "stepNumber": 5,
+            "label": "Resolve quest",
+            "description": "Compare total willpower committed vs threat in the staging area.",
+            "category": "action",
+            "phase": "2",
+            "phaseLabel": "Quest phase"
+        },
+        {
+            "stepNumber": 6,
+            "label": "Travel",
+            "description": "Choose to travel to one location in the staging area.",
+            "category": "action",
+            "phase": "3",
+            "phaseLabel": "Travel phase"
+        },
+        {
+            "stepNumber": 7,
+            "label": "Optional engagement",
+            "description": "Players may choose to engage one enemy in the staging area.",
+            "category": "action",
+            "phase": "4",
+            "phaseLabel": "Encounter phase"
+        },
+        {
+            "stepNumber": 8,
+            "label": "Engagement checks",
+            "description": "Perform engagement checks against enemies in the staging area.",
+            "category": "action",
+            "phase": "4",
+            "phaseLabel": "Encounter phase"
+        },
+        {
+            "stepNumber": 9,
+            "label": "Deal shadow cards",
+            "description": "Deal 1 shadow card to each enemy engaged with a player.",
+            "category": "action",
+            "phase": "5",
+            "phaseLabel": "Combat phase"
+        },
+        {
+            "stepNumber": 10,
+            "label": "Enemy attacks",
+            "description": "Resolve all enemy attacks in player order.",
+            "category": "action",
+            "phase": "5",
+            "phaseLabel": "Combat phase"
+        },
+        {
+            "stepNumber": 11,
+            "label": "Player attacks",
+            "description": "Declare and resolve one attack against each engaged enemy.",
+            "category": "action",
+            "phase": "5",
+            "phaseLabel": "Combat phase"
+        },
+        {
+            "stepNumber": 12,
+            "label": "Ready cards",
+            "description": "Ready all exhausted cards in play.",
+            "category": "action",
+            "phase": "6",
+            "phaseLabel": "Refresh phase"
+        },
+        {
+            "stepNumber": 13,
+            "label": "Raise threat",
+            "description": "Each player raises their threat by 1.",
+            "category": "action",
+            "phase": "6",
+            "phaseLabel": "Refresh phase"
+        },
+        {
+            "stepNumber": 14,
+            "label": "Pass first player token",
+            "description": "Pass the first player token to the next player clockwise.",
+            "category": "action",
+            "phase": "6",
+            "phaseLabel": "Refresh phase"
+        },
+        {
+            "stepNumber": 15,
+            "label": "End round",
+            "description": "The round is complete. Begin new round with Planning phase.",
+            "category": "action",
+            "phase": "6",
+            "phaseLabel": "Refresh phase"
+        }
+    ]
+}
