@@ -1,0 +1,35 @@
+.step {
+    position: relative;
+    height: 5px;
+    width: 100%;
+    background-color: red;
+}
+
+.first {
+    width: 20px;
+}
+
+.completed,
+.active {
+    background-color: lightgray;
+}
+
+.step-circle {
+    width: 20px;
+    height: 20px;
+    background-color: lightgray;
+    border-radius: 50%;
+    position: absolute;
+    top: -7px;
+    right: 0;
+}
+
+.step-arrow {
+    position: absolute;
+    top: -32px;
+    left: -4px;
+    svg {
+        height: 30px;
+        width: 30px;
+    }
+}
