@@ -1,34 +1,55 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
+import { useState, useEffect } from "react";
+import ProgressBar from "./components/progress-bar/ProgressBar";
+import Button from "./components/button/Button";
 import "./App.css";
+import data from "./data.json";
 
 function App() {
-  const [count, setCount] = useState(0);
+
+  const [currentStep, setCurrentStep] = useState(1);
+
+  useEffect(() => {
+    window.addEventListener("keydown", handleKeyDown);
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    }
+  }, [currentStep]);
+
+  const handleKeyDown = (event: KeyboardEvent) => {
+    if (event.key === "ArrowRight" || event.key === "Enter") {
+      handleNext();
+    } else if (event.key === "ArrowLeft") {
+      handlePrevious();
+    }
+  } 
+
+  const handleNext = () => {
+    if (currentStep < data.steps.length) {
+      setCurrentStep(currentStep + 1);
+    }
+  }
+
+  const handlePrevious = () => {
+    if (currentStep > 1) {
+      setCurrentStep(currentStep - 1);
+    }
+  }
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className="app">
+      <div className="container">
+        <div className="step-description">
+          <h1>{data.steps[currentStep - 1].phaseLabel}</h1>
+          <h2>{data.steps[currentStep - 1].label}</h2>
+          <p>{data.steps[currentStep - 1].description}</p>
+        </div>
+        <ProgressBar steps={data.steps} currentStep={currentStep}></ProgressBar>
+        <div className="button-container">
+          <Button onClick={handlePrevious} children="Previous" />
+          <Button onClick={handleNext} children="Next" />
+        </div>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    </div>
   );
 }
 
